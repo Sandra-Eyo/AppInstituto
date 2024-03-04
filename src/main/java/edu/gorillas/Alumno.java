@@ -1,5 +1,7 @@
 package edu.gorillas;
 
+import java.time.format.DateTimeFormatter;
+
 public class Alumno  extends Miembro{
 
     //Atributos:
@@ -31,5 +33,13 @@ public class Alumno  extends Miembro{
     public double getImporteMatricula() { return importeMatricula; }
     public void setImporteMatricula(double importeMatricula) { this.importeMatricula = importeMatricula; }
 
+    //Metodos:
+
+
+    @Override
+    public void aplicarBonificacion() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    };
 
 }

@@ -23,5 +23,9 @@ public class Miembro extends Persona {
     public String getFechaIncorporacion() { return fechaIncorporacion; }
     public void setFechaIncorporacion(String fechaIncorporacion) { this.fechaIncorporacion = fechaIncorporacion; }
 
+    //Metodos:
+
+    public void aplicarBonificacion() {};
+
 
 }
