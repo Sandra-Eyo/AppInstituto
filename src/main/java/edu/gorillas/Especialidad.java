@@ -6,7 +6,9 @@ public class Especialidad {
     private int identificador;
     private String nombre;
 
-    //Constructor:
+
+
+    //Constructor :
     public Especialidad(int identificador, String nombre) {
         this.identificador = identificador;
         this.nombre = nombre;
