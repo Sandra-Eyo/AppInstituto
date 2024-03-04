@@ -13,7 +13,7 @@ public class Profesor extends Miembro {
         super();
         this.tipoJornada = "completa";
         this.salario = 1560.50;
-        this.especialidad = new Especialidad(1, "Lengua");
+        this.especialidad = new Especialidad();
     }
 
     //Constructor parametrizado:

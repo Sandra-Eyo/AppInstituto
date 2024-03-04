@@ -6,9 +6,13 @@ public class Especialidad {
     private int identificador;
     private String nombre;
 
+    //Constructor por defecto:
+    public Especialidad() {
+        this.identificador = 1;
+        this.nombre = "Lengua";
+    }
 
-
-    //Constructor :
+    //Constructor parametrizado:
     public Especialidad(int identificador, String nombre) {
         this.identificador = identificador;
         this.nombre = nombre;
