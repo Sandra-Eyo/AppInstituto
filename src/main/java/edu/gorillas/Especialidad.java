@@ -1,13 +1,13 @@
 package edu.gorillas;
 
-public class Especialidades {
+public class Especialidad {
 
     //Atributos:
-    public int identificador;
-    public String nombre;
+    private int identificador;
+    private String nombre;
 
     //Constructor:
-    public Especialidades(int identificador, String nombre) {
+    public Especialidad(int identificador, String nombre) {
         this.identificador = identificador;
         this.nombre = nombre;
     }
