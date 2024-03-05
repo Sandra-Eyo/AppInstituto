@@ -1,5 +1,6 @@
 package edu.gorillas;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,10 +26,13 @@ public class MiembroExcep {
                     c++;
                     break;
                 case 2:
+                    eliminarMiembro(miembros);
+                    break;
+                case 3:
                     listarMiembros(miembros);
                     break;
             }
-        } while (opcion != 3);
+        } while (opcion != 7);
     }
 
 
@@ -43,7 +47,7 @@ public class MiembroExcep {
         System.out.println("2: Eliminar miembro");
         System.out.println("3: Listar miembros");
         System.out.println("4: Mostrar edad media de Profesores");
-        System.out.println("5: Mostrar nota media de Alumnos DAM");
+        System.out.println("5: Mostrar nota media de Alumnos del ciclo DAM");
         System.out.println("6: Calcular salario medio de profesores");
         System.out.println("7: Salir");
     }
@@ -62,4 +66,20 @@ public class MiembroExcep {
             System.out.println("-----------------------------------");
         }
     }
+
+    private static void eliminarMiembro(ArrayList<Miembro> miembros) {
+        System.out.println("Intruzca el DNI del miembro que desea eliminar:");
+        Scanner scan = new Scanner(System.in);
+        String dniEliminar = scan.nextLine();
+
+        for (Miembro miembro : miembros) {
+            if (miembro.getDni().equals(dniEliminar)) {
+                miembros.remove(miembro);
+                System.out.println("El miembro con el dni " + dniEliminar + " ha sido eliminado. ");
+                break;
+            }
+        }
+
+    }
+
 }
