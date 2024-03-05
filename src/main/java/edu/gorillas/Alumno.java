@@ -1,5 +1,6 @@
 package edu.gorillas;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Alumno  extends Miembro{
@@ -34,11 +35,14 @@ public class Alumno  extends Miembro{
     public void setImporteMatricula(double importeMatricula) { this.importeMatricula = importeMatricula; }
 
     //Metodos:
-
-
-    @Override
-    public void aplicarBonificacion() {
+    public void aplicarBonificacion(String fechaIncorporacion) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fechaIncorporacionA = LocalDate.parse(fechaIncorporacion, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        LocalDate fechaActual = LocalDate.now();
+        if (fechaActual.minusYears(2).isAfter(fechaIncorporacionA)) {
+            // Si hace más de 2 años que el alumno se incorporó al centro, el importe de la matricula se reducirá un 10%
+            this.importeMatricula -= this.importeMatricula * 0.10;
+        }
 
     };
 

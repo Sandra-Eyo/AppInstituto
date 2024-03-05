@@ -1,5 +1,8 @@
 package edu.gorillas;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Profesor extends Miembro {
 
     //Atributos:
@@ -25,14 +28,24 @@ public class Profesor extends Miembro {
     }
 
     //Getters y setters:
-
-
     public String getTipoJornada() { return tipoJornada; }
     public void setTipoJornada(String tipoJornada) { this.tipoJornada = tipoJornada; }
     public double getSalario() { return salario; }
     public void setSalario(double salario) { this.salario = salario; }
     public Especialidad getEspecialidad() { return especialidad; }
     public void setEspecialidad(Especialidad especialidad) { this.especialidad = especialidad; }
+
+    //Métodos:
+    public void aplicarBonificacion(String fechaIncorporacion) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fechaIncorporacionP = LocalDate.parse(fechaIncorporacion, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        LocalDate fechaActual = LocalDate.now();
+        if (fechaActual.minusYears(3).isAfter(fechaIncorporacionP)) {
+            // Si el profesor se incorporó hace más de 3 años, incrementar el sueldo en un 15%
+            this.salario += this.salario * 0.15;
+        }
+
+    };
 
 
 }
