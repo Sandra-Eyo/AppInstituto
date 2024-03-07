@@ -1,6 +1,6 @@
 package edu.gorillas;
 
-public class Miembro extends Persona {
+public abstract class Miembro extends Persona {
 
     //Atributos propios:
     private String fechaIncorporacion;
