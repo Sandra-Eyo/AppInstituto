@@ -15,6 +15,10 @@ public class MiembroExcep {
 
         //Creamos un arraylist de empleados
         ArrayList<Miembro> miembros = new ArrayList<Miembro>();
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Especialidad> esp = new ArrayList<>();
+        esp.add(new Especialidad(0, "Informática"));
+        esp.add(new Especialidad(1, "Sanidad"));
 
         //Bucle de menú
         do {
